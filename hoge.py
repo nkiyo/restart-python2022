@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import Tuple
 
 import logging
@@ -18,6 +19,13 @@ class MyClass:
         print(f"{s}")
         return n1 + n2
 
+@dataclass(frozen=True)
+class MyClass2:
+    name: str
+    id: int
+
+    def get_text(self) -> str:
+        return f"{self.id}-{self.name}"
 
 n = 123
 logging.debug(f'hello {n}')
@@ -29,3 +37,8 @@ x: MyClass = MyClass()
 x.f("kiyoshi")
 
 print(f"add is {x.add((1,2, 'hoge'))}")
+
+mc2 = MyClass2("nakahara", "123")
+logging.debug(f"{mc2.get_text()}")
+logging.debug(mc2)
+# mc2.id=124 # dataclasses.FrozenInstanceError: cannot assign to field 'id'
