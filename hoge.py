@@ -1,5 +1,8 @@
 from typing import Tuple
 
+import logging
+logging.basicConfig(format='%(asctime)s %(filename)s:%(lineno)4d [%(levelname)8s] %(message)s', encoding='utf-8', level=logging.DEBUG)
+
 
 class MyClass:
     i: int = 12345
@@ -15,6 +18,12 @@ class MyClass:
         print(f"{s}")
         return n1 + n2
 
+
+n = 123
+logging.debug(f'hello {n}')
+logging.info('hello')
+logging.warning('hello')
+logging.error('hello')
 
 x: MyClass = MyClass()
 x.f("kiyoshi")
