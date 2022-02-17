@@ -7,6 +7,7 @@ logging.basicConfig(
     format="%(asctime)s %(filename)s:%(lineno)4d [%(levelname)8s] %(message)s",
     encoding="utf-8",
     level=logging.DEBUG,
+    filename="test.log"
 )
 
 
@@ -34,18 +35,18 @@ class MyClass2:
         return f"{self.id}-{self.name}"
 
 
-#n = 123
-#logging.debug(f"hello {n}")
-#logging.info("hello")
-#logging.warning("hello")
-#logging.error("hello")
-#
-#x: MyClass = MyClass()
-#x.f("kiyoshi")
-#
-#print(f"add is {x.add((1,2, 'hoge'))}")
-#
-#mc2 = MyClass2("nakahara", 123)
-#logging.debug(f"{mc2.get_text()}")
-#logging.debug(mc2)
-## mc2.id=124 # dataclasses.FrozenInstanceError: cannot assign to field 'id'
+n = 123
+logging.debug(f"hello {n}")
+logging.info("hello")
+logging.warning("hello")
+logging.error("hello")
+
+x: MyClass = MyClass()
+x.f("kiyoshi")
+
+print(f"add is {x.add((1,2, 'hoge'))}")
+
+mc2 = MyClass2("nakahara", 123)
+logging.debug(f"{mc2.get_text()}")
+logging.debug(mc2)
+# mc2.id=124 # dataclasses.FrozenInstanceError: cannot assign to field 'id'
